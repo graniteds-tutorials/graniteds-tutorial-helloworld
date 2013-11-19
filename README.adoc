@@ -21,7 +21,7 @@ The first step is to clone this git repository from the command line:
 git clone http://github.com/graniteds/graniteds-tutorial-remoting.git
 ----
 
-Next cd in the tutorial folder and build the project and tutorial document:
+Next +cd+ in the tutorial folder and build the project and tutorial document:
 
 ----
 cd graniteds-tutorial-remoting
@@ -30,14 +30,14 @@ mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 ----
 
 The available options for the server are:
-- spring
-- ejb
-- cdi
+* spring
+* ejb
+* cdi
 
 The available options for the client are:
-- java
-- javafx
-- flex
-- air
+* java
+* javafx
+* flex
+* air
 
-Then you can follow the tutorial document generated in +target/docs/graniteds-tutorial-helloworld.html+.
+Then you can follow the instructions in the tutorial document generated in +target/docs/graniteds-tutorial-helloworld.html+.
