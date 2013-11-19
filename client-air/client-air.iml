@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="client-air">
+    <configurations>
+      <configuration name="client-air" target-platform="Desktop" main-class="helloworld" output-file="helloworld.swf" output-folder="$MODULE_DIR$/target">
+        <dependencies>
+          <entries>
+            <entry library-name="Maven: com.adobe.flex.framework:spark:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flexunit:flexunit:swc:4.0-rc-1" library-level="project">
+              <dependency linkage="Test" />
+            </entry>
+            <entry library-name="Maven: org.graniteds:granite-client-flex:swc:3.0.0.SNAPSHOT" library-level="project">
+              <dependency linkage="Include" />
+            </entry>
+            <entry library-name="Maven: org.graniteds:granite-client-flex45-advanced:swc:3.0.0.SNAPSHOT" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:advancedgrids:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:authoringsupport:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:charts:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:core:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:flash-integration:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:framework:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:mx:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:osmf:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:rpc:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:sparkskins:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:spark_dmv:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:textLayout:swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:advancedgrids:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:charts:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:framework:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:mx:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:osmf:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:rpc:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:spark:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:textLayout:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:flash-integration:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:playerglobal:swc:10.2:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Maven: com.adobe.flex.framework:playerglobal:rb.swc:4.5.1.21328" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="Flexmojos SDK 4.5.1.21328" />
+        </dependencies>
+        <compiler-options>
+          <map>
+            <entry key="compiler.locale" value="en_US" />
+          </map>
+        </compiler-options>
+        <packaging-air-desktop package-file-name="helloworld" />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/flex" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="jdk" jdkName="Flexmojos SDK 4.5.1.21328" jdkType="Flexmojos SDK Type" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:spark:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flexunit:flexunit:swc:4.0-rc-1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.graniteds:granite-client-flex:swc:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.graniteds:granite-client-flex45-advanced:swc:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:advancedgrids:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:authoringsupport:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:charts:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:core:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:flash-integration:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:framework:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:mx:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:osmf:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:rpc:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:sparkskins:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:spark_dmv:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:textLayout:swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:advancedgrids:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:charts:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:framework:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:mx:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:osmf:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:rpc:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:spark:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:textLayout:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:flash-integration:rb.swc:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:playerglobal:swc:10.2:4.5.1.21328" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.adobe.flex.framework:playerglobal:rb.swc:4.5.1.21328" level="project" />
+  </component>
+</module>
+

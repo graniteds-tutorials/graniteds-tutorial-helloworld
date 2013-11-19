@@ -1,0 +1,42 @@
+== The Java client application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/client-java/src
+
+The client application is a simple command-line Java application which will remotely call the Hello World service.
+It's a single main class which consists in 3 parts:
+
+* Bootstrap the GraniteDS container
+* Configure the client components
+* Execute the remote call
+
+Here is the source code for this class:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-app]
+----
+<1> Bootstrap the GraniteDS Tide context.
+<2> Configure a +ServerSession+ object in the context.
+<3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server.
+<4> Start the server session, initializing all required resources.
+<5> Call the remote method +hello+ with the name argument. The last argument should be a responder class which will handle
+    the asynchronous result.
+<6> The success result handler, +event.getResult()+ contains the object returned by the service method.
+<7> The fault handler logs the error information from +event.getFault()+ in case of a fault.
+<8> The remote call is always asynchronous, +get()+ does wait until the result is received. Usually it's much more recommended to handle
+    the result asynchronously in the responder.
+<9> Stop the server session, releasing all internal resources.
+
+The +ContextManager+ is supposed to be a singleton in the application so it can be accessed from anywhere. In more realistic
+cases it would be necessary to store the +ContextManager+ object somewhere in a static property.
+
+The configuration steps (1 to 4) should be done only once at the startup of the application.
+
+Finally, here are the maven dependencies for the Java module:
+[source,xml,indent=0]
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-java/pom.xml[tags=maven-deps]
+----

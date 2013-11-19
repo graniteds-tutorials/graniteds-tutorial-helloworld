@@ -1,0 +1,117 @@
+:rootdir: ../../..
+
+= GraniteDS Remoting Tutorial
+
+This tutorial shows how to build a simple client/server Hello World application where the client and server communicate
+using GraniteDS remoting.
+
+If you are looking at this document in html format, you have likely already built the project.
+
+In any other case, you can build it with:
+
+[subs="verbatim,attributes"]
+----
+mvn clean install asciidoctor:process-asciidoc -Dserver={server} -Dclient={client}
+----
+
+You can open the project in your preferred IDE to browse the source code conveniently.
+Eclipse and IntelliJ IDEA project files are provided, other IDEs such as NetBeans are usually able to directly import Maven projects.
+
+NOTE: The provided Eclipse project files require the M2E plugin to manage Maven dependencies.
+
+ifeval::["{client}" == "flex"]
+NOTE: Using Flash Builder is recommended if you want to import the Flex module in Eclipse.
+
+NOTE: The compilation in Flash Builder uses an Eclipse path variable named +M2_REPO+ which should point to your Maven local repository (usually +{user.home}/.m2/repository+).
+It can be set in the main menu _Workspace > Preferences_, then _General > Workspace > Linked Resources_.
+endif::[]
+ifeval::["{client}" == "air"]
+NOTE: Using Flash Builder is recommended if you want to import the Flex module in Eclipse.
+
+NOTE: The compilation in Flash Builder uses an Eclipse path variable named +M2_REPO+ which should point to your Maven local repository (usually +{user.home}/.m2/repository+).
+It can be set in the main menu _Workspace -> Preferences_, then _General > Workspace > Linked Resources_.
+endif::[]
+
+ifeval::["{client}" == "javafx"]
+NOTE: The compilation of the JavaFX project in Eclipse requires adding the +jfxrt.jar+ library to the classpath. The provided project expects a 
+variable named +JFX_LIB+ which should point to this library and which can be set in the main menu _Workspace > Preferences_, then _Java > Build Path > Variables_.
+endif::[]
+
+To start the server, open a new console in the folder +server-{server}+ and start one of the available Maven
+embedded server configurations:
+
+[subs="verbatim,attributes"]
+----
+cd server-{server}
+----
+
+ifeval::["{server}" == "spring"]
+.Tomcat 7
+----
+mvn tomcat7:run-war
+----
+endif::[]
+
+.JBoss AS 7.1
+----
+mvn jboss-as:run
+----
+
+.GlassFish 3.1.2.2
+----
+mvn embedded-glassfish:run
+----
+
+.Apache TomEE 1.5
+----
+mvn tomee:run
+----
+
+ifeval::["{client}" == "java"]
+To launch the client, open a new console in the +client-java+ folder and launch the application jar file:
+
+----
+cd client-java
+
+java -jar target/helloworld.jar John
+----
+
+This client is not interactive and simply uses the command line argument (here +John+) as argument to the remote call.
+You should see some logs and the following output:
+----
+-----------------------------
+Hello John
+-----------------------------
+----
+endif::[]
+
+ifeval::["{client}" == "javafx"]
+Before launching the JavaFX client, it is first necessary to build a proper executable jar with the Zenjava JavaFX plugin:
+
+----
+cd client-javafx
+
+mvn jfx:jar
+
+java -jar target/jfx/app/helloworld.jar
+----
+endif::[]
+
+ifeval::["{client}" == "flex"]
+To run the Flex client, browse http://localhost:8080/helloworld/helloworld.swf[^]
+endif::[]
+
+ifeval::["{client}" == "air"]
+Install and run the +.air+ package built in +target/helloworld.air+.
+endif::[]
+
+NOTE: To run the tutorial for another combination of client and server technologies, redo everything from the start
+with the corresponding +client+ and +server+ arguments, so you get the correct tutorial document.
+
+
+Now let's have a look at the various interesting code and configuration elements of the server and the client
+applications.
+
+include::{rootdir}/server-{server}/src/main/asciidoc/tutorial-server-{server}.adoc[]
+
+include::{rootdir}/client-{client}/src/main/asciidoc/tutorial-client-{client}.adoc[]

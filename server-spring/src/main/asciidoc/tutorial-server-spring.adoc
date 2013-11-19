@@ -1,0 +1,72 @@
+== The Spring server application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/server-spring/src
+
+The server application is basically a simple Spring MVC application exposing one Hello World service. The necessary configuration
+for GraniteDS is relatively easy and consists in:
+
+* adding a listener in +web.xml+ to bootstrap GraniteDS when the application starts,
+* adding a Spring MVC dispatcher servlet to route incoming requests to GraniteDS,
+* declaring GraniteDS in the Spring application context
+
+The first important file is the web application +web.xml+ which contains the basic Spring setup:
+
+[source,xml,indent=0]
+.main/webapp/WEB-INF/web.xml
+----
+include::{srcdir}/main/webapp/WEB-INF/web.xml[tags=webxml-spring]
+----
+
+And the basic GraniteDS setup (bootstrap servlet listener and Spring MVC dispatcher servlet):
+
+[source,xml,indent=0]
+.main/webapp/WEB-INF/web.xml
+----
+include::{srcdir}/main/webapp/WEB-INF/web.xml[tags=webxml-graniteds]
+----
+<1> GraniteDS bootstrap servlet listener
+<2> Url mapping of the dispatcher servlet for GraniteDS, +/graniteamf/*+ is the recommended default
+
+Spring MVC also requires a file +dispatcher-servlet.xml+ in +WEB-INF+ which we will let empty.
+
+The actual Spring application context is defined in +application-context.xml+, the declaration of GraniteDS simply
+consists in the +graniteds+ XML namespace declaration:
+
+[source,xml,indent=0]
+.main/resources/application-context.xml
+----
+include::{srcdir}/main/resources/application-context.xml[tags=namespace]
+----
+
+And the following bean, which declares that the remoting is using the Tide API, and defines the url mapping +/\*+
+meaning that all requests on the dispatcher servlet, i.e. on +/helloworld/graniteamf/*+ will be routed to GraniteDS.
+This is the recommended default.
+
+[source,xml,indent=0]
+.main/resources/application-context.xml
+----
+include::{srcdir}/main/resources/application-context.xml[tags=graniteds-config]
+----
+
+Finally we have a simple Spring service annotated with +@Service+:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/server/HelloWorldServiceImpl.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldServiceImpl.java[tags=service-impl]
+----
+
+To enable remote access to this service, you just have to annotate its interface with +@RemoteDestination+:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java[tags=remote-destination]
+----
+
+Finally, here are the maven dependencies for the Spring module:
+[source,xml,indent=0]
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-spring/pom.xml[tags=maven-deps]
+----

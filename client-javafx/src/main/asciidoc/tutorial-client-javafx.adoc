@@ -1,0 +1,59 @@
+== The JavaFX client application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/client-javafx/src
+
+The client application is a simple JavaFX form which will remotely call the Hello World service.
+It's a single main class which consists in 4 parts:
+
+. Bootstrap the GraniteDS container and configure the client components
+. Define the JavaFX UI
+. Execute the remote call in a UI handler
+. Handle the closing of the application
+
+Here is the source code for the first bootstrap/configuration part:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-setup]
+----
+<1> Bootstrap the GraniteDS Tide context. Note that we pass a +JavaFXApplication+ to indicate that we need JavaFX support
+<2> Configure a +ServerSession+ object in the context
+<3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server
+<4> Start the server session, initializing all required resources
+
+The UI is a simple JavaFX form and there is absolutely no dependency or specific requirement to have it work with GraniteDS:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-ui]
+----
+
+The interesting part is how to bind the button click and enter key with a call to the remote service:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-call]
+----
+<1> We call the remote method +hello+ on the client proxy, passing the user input +nameField.getText()+ as argument
+<2> The last argument is a responder class implementing +TideResponder+ which will handle the asynchronous result
+<3> The success result handler updates the UI label with the +event.getResult()+ containing the object returned by the service method
+<4> The fault handler logs the error information from +event.getFault()+ in case of a fault
+
+Finally we set a close handler on the window to properly release all resources:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-close]
+----
+
+Finally, here are the maven dependencies for the JavaFX module:
+[source,xml,indent=0]
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
+----

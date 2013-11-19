@@ -1,0 +1,34 @@
+== The EJB server application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/server-ejb/src
+
+The server application is basically a simple EJB application exposing one Hello World service.
+
+The necessary configuration for GraniteDS is very simple and consists in adding an annotated configuration class to
+trigger the startup of GraniteDS and the EJB integration (using a Servlet 3 container initializer behind the scenes):
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/server/HelloWorldApplication.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldApplication.java[tags=server-filter]
+----
+
+It's then necessary to add an empty +META-INF/services-config.properties+ file to trigger the GraniteDS class scanner
+which will detect the EJB classes. This is a simple marker file which indicates to GraniteDS where to look for and
+prevent from scanning the whole classpath.
+
+The actual application is a simple stateless local EJB, and we annotate its local interface with +@RemoteDestination+
+to enable remote access:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java[tags=remote-destination]
+----
+
+Finally, here are the maven dependencies for the EJB module:
+[source,xml,indent=0]
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-ejb/pom.xml[tags=maven-deps]
+----

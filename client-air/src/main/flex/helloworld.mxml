@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<s:WindowedApplication
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:mx="library://ns.adobe.com/flex/mx"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        preinitialize="init()">
+
+    <fx:Script>
+        <![CDATA[
+            import org.granite.tide.events.TideResultEvent;
+            import org.granite.tide.service.SimpleServerApp;
+            import org.granite.tide.spring.Spring;
+            import org.granite.tide.Component;
+
+            // tag::client-setup[]
+            private function init():void {
+                Spring.getInstance().initApplication(); // <1>
+                Spring.getInstance().mainServerSession.serverApp =
+                        new SimpleServerApp("/helloworld", false, "localhost", "8080"); // <2>
+            }
+            // end::client-setup[]
+
+            // tag::client-call[]
+            [In]
+            public var helloWorldService:Component; // <1>
+
+            private function send():void {
+                helloWorldService.hello(nameInput.text, // <2>
+                    function(event:TideResultEvent):void { // <3>
+                        resultLabel.text = event.result as String;
+                    }
+                );
+            }
+            // end::client-call[]
+        ]]>
+    </fx:Script>
+
+    <!-- tag::client-ui[] -->
+    <s:Form>
+        <s:FormItem label="Enter your name: ">
+            <s:HGroup gap="10">
+                <s:TextInput id="nameInput" enter="send()"/> <!--1-->
+                <s:Button label="Send" click="send()"/> <!--2-->
+            </s:HGroup>
+        </s:FormItem>
+        <s:FormItem>
+            <s:Label id="resultLabel"/>
+        </s:FormItem>
+    </s:Form>
+    <!-- end::client-ui[] -->
+</s:WindowedApplication>

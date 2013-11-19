@@ -1,0 +1,44 @@
+= GraniteDS Remoting Tutorial
+
+This tutorial shows how to build a simple client/server Hello World application where the client and server communicate
+using GraniteDS remoting.
+
+== How to use this tutorial
+
+GraniteDS is relatively special because it integrates various client and server technologies.
+Its actual use thus somehow depends on which of these technologies you will be using.
+This tutorial includes most of the existing combinations supported by GraniteDS, but first you will have to build and
+generate the documentation for your technologies of choice.
+
+You will need a few tools to use this tutorial:
+
+- A Git client
+- JDK 7: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[(download here)]
+- Maven 3: http://maven.apache.org/download.cgi[(download here)]
+
+The first step is to clone this git repository from the command line:
+
+----
+git clone http://github.com/graniteds/graniteds-tutorial-remoting.git
+----
+
+Next cd in the tutorial folder and build the project and tutorial document:
+
+----
+cd graniteds-tutorial-remoting
+
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
+----
+
+The available options for the server are:
+- spring
+- ejb
+- cdi
+
+The available options for the client are:
+- java
+- javafx
+- flex
+- air
+
+Then you can follow the tutorial document generated in +target/docs/graniteds-tutorial-helloworld.html+.

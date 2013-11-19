@@ -1,0 +1,1 @@
+// Don't remove, flexmojos crashes when there is no src/main/resources folder

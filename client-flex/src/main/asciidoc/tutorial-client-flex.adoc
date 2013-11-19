@@ -1,0 +1,66 @@
+== The Flex client application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/client-flex/src
+
+The client application is a simple Flex form which will remotely call the Hello World service.
+It's a single main MXML application which consists in 3 parts:
+
+. Bootstrap the GraniteDS container and configure the client components
+. Define the Flex UI
+. Execute the remote call in a UI handler
+
+Here is the source code for the first bootstrap/configuration part:
+
+[source,xml,indent=0]
+.main/flex/helloworld.mxml
+----
+include::{srcdir}/main/flex/helloworld.mxml[tags=client-setup]
+----
+<1> This bootstraps the GraniteDS Tide context in the application +preinitialize+ handler. Note that here we use the +Spring+
+integration container but it can work with any server technology. However for real applications with an EJB or CDI server it
+would be necessary to use the integration classes +Ejb+ and +Cdi+ which provide more specific support.
+As the application will run in a browser, it can automatically detect its server url and context path so no further
+configuration is necessary.
+
+The UI is a simple Flex form and has no dependency or specific requirement to work with GraniteDS:
+
+[source,xml,indent=0]
+.main/flex/helloworld.mxml
+----
+include::{srcdir}/main/flex/helloworld.mxml[tags=client-ui]
+----
+<1> Pressing on enter triggers the method +send+ that we'll see below
+<2> Same for a button click
+
+The interesting part is how to bind the button click and enter key to a call to the remote service:
+
+[source,java,indent=0]
+.main/flex/helloworld.mxml
+----
+include::{srcdir}/main/flex/helloworld.mxml[tags=client-call]
+----
+<1> We get a client proxy for the service by dependency injection with the annotation +[In]+. The name of the property must
+match the name of the service. The type +Component+ is the generic type for client proxies and indicates to Tide that we want
+an instance of this type.
+<2> We call the remote method +hello+ on the proxy, passing the user input +nameInput.text+ as argument.
+<3> The last argument is a callback function which will handle the asynchronous result. This callback will update the UI label
+with the +event.result+ containing the object returned by the service method.
+
+Finally here are the necessary maven dependencies and definitions to build the Flex module:
+
+[source,xml,indent=0]
+.client-flex/pom.xml
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-deps]
+
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-build-flex]
+----
+
+As we want the Flex application to be deployed on the server to be accessible from a browser, it is also necessary to add
+the following build element to the server +pom+ to copy the SWF in the web archive during the package phase:
+[source,xml,indent=0]
+.server-{server}/pom.xml
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/pom.xml[tags=maven-flex]
+----
