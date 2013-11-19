@@ -30,11 +30,13 @@ mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 ----
 
 The available options for the server are:
+
 * spring
 * ejb
 * cdi
 
 The available options for the client are:
+
 * java
 * javafx
 * flex
