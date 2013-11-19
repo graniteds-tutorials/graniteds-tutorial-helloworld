@@ -5,8 +5,7 @@ using GraniteDS remoting.
 
 == How to use this tutorial
 
-GraniteDS is relatively special because it integrates various client and server technologies.
-Its actual use thus somehow depends on which of these technologies you will be using.
+GraniteDS integrates various client and server technologies, thus its actual use somehow depends on which of these technologies you will be using.
 This tutorial includes most of the existing combinations supported by GraniteDS, but first you will have to build and
 generate the documentation for your technologies of choice.
 
