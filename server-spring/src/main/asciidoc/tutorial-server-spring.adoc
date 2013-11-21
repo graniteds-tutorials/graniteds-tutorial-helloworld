@@ -49,8 +49,10 @@ This is the recommended default.
 include::{srcdir}/main/resources/application-context.xml[tags=graniteds-config]
 ----
 
-Finally we have a simple Spring service annotated with +@Service+:
+Next we have a simple Spring service annotated with +@Service+. We set a name to the service so it can be used by the
+client (see client usage <<client.destination,here>>):
 
+[[server.destination]]
 [source,java,indent=0]
 .main/java/org/graniteds/tutorial/remoting/server/HelloWorldServiceImpl.java
 ----

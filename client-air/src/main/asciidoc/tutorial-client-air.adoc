@@ -35,14 +35,15 @@ include::{srcdir}/main/flex/helloworld.mxml[tags=client-ui]
 
 The interesting part is how to bind the button click and enter key to a call to the remote service:
 
+[[client.destination]]
 [source,java,indent=0]
 .main/flex/helloworld.mxml
 ----
 include::{srcdir}/main/flex/helloworld.mxml[tags=client-call]
 ----
 <1> We get a client proxy for the service by dependency injection with the annotation +[In]+. The name of the property must
-match the name of the service. The type +Component+ is the generic type for client proxies and indicates to Tide that we want
-an instance of this type.
+match the name of the service (see <<server.destination,here>> where the service name is defined in the server application).
+The type +Component+ is the generic type for client proxies and indicates to Tide that we want an instance of this type.
 <2> We call the remote method +hello+ on the proxy, passing the user input +nameInput.text+ as argument.
 <3> The last argument is a callback function which will handle the asynchronous result. This callback will update the UI label
 with the +event.result+ containing the object returned by the service method.

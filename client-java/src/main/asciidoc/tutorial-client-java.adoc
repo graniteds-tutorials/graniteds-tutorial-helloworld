@@ -12,6 +12,7 @@ It's a single main class which consists in 3 parts:
 
 Here is the source code for this class:
 
+[[client.destination]]
 [source,java,indent=0]
 .main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
 ----
@@ -19,7 +20,8 @@ include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldCli
 ----
 <1> Bootstrap the GraniteDS Tide context.
 <2> Configure a +ServerSession+ object in the context.
-<3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server.
+<3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server
+ (see <<server.destination,here>> where the service name is defined in the server application).
 <4> Start the server session, initializing all required resources.
 <5> Call the remote method +hello+ with the name argument. The last argument should be a responder class which will handle
     the asynchronous result.

@@ -13,15 +13,17 @@ It's a single main class which consists in 4 parts:
 
 Here is the source code for the first bootstrap/configuration part:
 
+[[client.destination]]
 [source,java,indent=0]
 .main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java
 ----
 include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-setup]
 ----
-<1> Bootstrap the GraniteDS Tide context. Note that we pass a +JavaFXApplication+ to indicate that we need JavaFX support
-<2> Configure a +ServerSession+ object in the context
+<1> Bootstrap the GraniteDS Tide context. Note that we pass a +JavaFXApplication+ to indicate that we need JavaFX support.
+<2> Configure a +ServerSession+ object in the context.
 <3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server
-<4> Start the server session, initializing all required resources
+(see <<server.destination,here>> where the service name is defined in the server application).
+<4> Start the server session, initializing all required resources.
 
 The UI is a simple JavaFX form and there is absolutely no dependency or specific requirement to have it work with GraniteDS:
 

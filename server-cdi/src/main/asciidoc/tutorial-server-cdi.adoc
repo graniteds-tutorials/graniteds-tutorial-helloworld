@@ -17,7 +17,7 @@ include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldApp
 Next we have to enable CDI bean scanning by adding an empty +beans.xml+ file in the +META-INF+ folder.
 
 The actual application comprises a simple CDI named bean which we annotate with +@RemoteDestination+ to enable remote access
-and with +@Named+ so it can be found by its name from the client application:
+and with +@Named+ so it can be found by its name from the client application (see client usage <<client.destination,here>>):
 
 [source,java,indent=0]
 .main/java/org/graniteds/tutorial/remoting/server/HelloWorldServiceImpl.java

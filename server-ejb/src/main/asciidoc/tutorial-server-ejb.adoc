@@ -21,11 +21,15 @@ prevent from scanning the whole classpath.
 The actual application is a simple stateless local EJB, and we annotate its local interface with +@RemoteDestination+
 to enable remote access:
 
+[[server.destination]]
 [source,java,indent=0]
 .main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java
 ----
 include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldService.java[tags=remote-destination]
 ----
+
+This EJB will be looked up by GraniteDS in the JNDI context by expanding the component name sent by the client
+(see client usage <<client.destination,here>>) to its EJB 3.1 global name +java:global/helloworld/HelloWorldService+.
 
 Finally, here are the maven dependencies for the EJB module:
 [source,xml,indent=0]
