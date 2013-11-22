@@ -22,10 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="client-flex" />
-        <module name="client-java" />
-        <module name="client-javafx" />
-        <module name="server-spring" />
         <module name="tutorial-helloworld-client-flex" />
       </profile>
     </annotationProcessing>

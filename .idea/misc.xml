@@ -8,15 +8,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/client-javafx/pom.xml" />
-        <option value="$PROJECT_DIR$/client-java/pom.xml" />
-        <option value="$PROJECT_DIR$/client-air/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/client-flex/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/server-cdi/pom.xml" />
+        <option value="$PROJECT_DIR$/server-ejb/pom.xml" />
       </set>
     </option>
   </component>
