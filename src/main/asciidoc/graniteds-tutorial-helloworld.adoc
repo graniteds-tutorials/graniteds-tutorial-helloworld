@@ -11,7 +11,9 @@ In any other case, you can build it with:
 
 [subs="verbatim,attributes"]
 ----
-mvn clean install asciidoctor:process-asciidoc -Dserver={server} -Dclient={client}
+mvn clean install -Dserver={server} -Dclient={client}
+
+mvn asciidoctor:process-asciidoc -Dserver={server} -Dclient={client}
 ----
 
 You can open the project in your preferred IDE to browse the source code conveniently.
