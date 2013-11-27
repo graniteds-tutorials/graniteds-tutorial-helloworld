@@ -1,7 +1,5 @@
 package org.graniteds.tutorial.remoting.server;
 
-import org.granite.messaging.service.annotations.RemoteDestination;
-
 import javax.ejb.Stateless;
 
 // tag::service-impl[]

@@ -1,6 +1,5 @@
 package org.graniteds.tutorial.remoting.server;
 
-import org.granite.messaging.service.annotations.RemoteDestination;
 import org.springframework.stereotype.Service;
 
 // tag::service-impl[]

@@ -22,6 +22,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="server-cdi" />
+        <module name="server-ejb" />
+        <module name="server-spring" />
         <module name="tutorial-helloworld-client-flex" />
       </profile>
     </annotationProcessing>
