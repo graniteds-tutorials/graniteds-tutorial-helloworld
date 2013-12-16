@@ -32,10 +32,11 @@ public class HelloWorldClient extends Application {
         Application.launch(HelloWorldClient.class, args);
     }
 
+    // tag::client-setup[]
+    private static Context context = new SimpleContextManager(new JavaFXApplication()).getContext(); // <1>
+
     @Override
     public void start(Stage stage) throws Exception {
-        // tag::client-setup[]
-        Context context = new SimpleContextManager(new JavaFXApplication()).getContext(); // <1>
         final ServerSession serverSession = context.set(
                 new ServerSession("/helloworld", "localhost", 8080)); // <2>
         final Component helloWorldService = context.set("helloWorldService",
@@ -96,19 +97,12 @@ public class HelloWorldClient extends Application {
         });
         nameField.setOnAction(sendButton.getOnAction());
         // end::client-call[]
-
-        // tag::client-close[]
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
-                try {
-                    serverSession.stop();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        // end::client-close[]
     }
+
+    // tag::client-close[]
+    @Override
+    public void stop() throws Exception {
+        context.byType(ServerSession.class).stop();
+    }
+    // end::client-close[]
 }
