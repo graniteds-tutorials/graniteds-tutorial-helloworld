@@ -14,7 +14,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.granite.client.javafx.tide.JavaFXApplication;
 import org.granite.client.tide.Context;
 import org.granite.client.tide.impl.ComponentImpl;
