@@ -19,13 +19,13 @@ You will need a few tools to use this tutorial:
 The first step is to clone this git repository from the command line:
 
 ----
-git clone http://github.com/graniteds/graniteds-tutorial-remoting.git
+git clone http://github.com/graniteds/graniteds-tutorial-helloworld.git
 ----
 
 Next +cd+ in the tutorial folder and build the project and tutorial document:
 
 ----
-cd graniteds-tutorial-remoting
+cd graniteds-tutorial-helloworld
 
 mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 ----
