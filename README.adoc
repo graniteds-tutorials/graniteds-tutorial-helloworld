@@ -13,7 +13,7 @@ generate the documentation for your technologies of choice.
 You will need a few tools to use this tutorial:
 
 - A Git client
-- JDK 7: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[(download here)]
+- JDK 7: (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[download here])
 - Maven 3: http://maven.apache.org/download.cgi[(download here)]
 
 The first step is to clone this git repository from the command line:
