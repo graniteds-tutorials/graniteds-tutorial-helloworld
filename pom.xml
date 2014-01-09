@@ -28,11 +28,11 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent</artifactId>
-        <version>1.0</version>
+        <version>3.0.1.GA</version>
     </parent>
 
     <artifactId>tutorial-helloworld</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>3.0.1.GA</version>
     <packaging>pom</packaging>
     <name>GraniteDS Remoting Tutorial</name>
 
