@@ -14,12 +14,16 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 import org.granite.client.javafx.tide.JavaFXApplication;
 import org.granite.client.tide.Context;
 import org.granite.client.tide.impl.ComponentImpl;
 import org.granite.client.tide.impl.SimpleContextManager;
-import org.granite.client.tide.server.*;
 import org.granite.client.tide.server.Component;
+import org.granite.client.tide.server.ServerSession;
+import org.granite.client.tide.server.TideFaultEvent;
+import org.granite.client.tide.server.TideResponder;
+import org.granite.client.tide.server.TideResultEvent;
 
 
 public class HelloWorldClient extends Application {

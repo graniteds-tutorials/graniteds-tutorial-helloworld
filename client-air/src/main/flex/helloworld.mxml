@@ -19,7 +19,7 @@
                         new SimpleServerApp("/helloworld", false, "localhost", "8080"); // <2>
             }
             // end::client-setup[]
-
+			
             // tag::client-call[]
             [In]
             public var helloWorldService:Component; // <1>
