@@ -4,7 +4,7 @@
     <id>org.graniteds.tutorial.helloworld</id>
     <filename>helloworld</filename>
     <name>GraniteDS Remoting Tutorial</name>
-    <versionNumber>1.0.0</versionNumber>
+    <versionNumber>3.0.4</versionNumber>
 	
     <initialWindow>
         <title>GraniteDS Remoting Tutorial</title>
