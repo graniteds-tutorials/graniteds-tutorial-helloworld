@@ -19,8 +19,8 @@ Here is the source code for the first bootstrap/configuration part:
 ----
 include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldClient.java[tags=client-setup]
 ----
-<1> Bootstrap the GraniteDS Tide context. Note that we pass a +JavaFXApplication+ to indicate that we need JavaFX support.
-<2> Configure a +ServerSession+ object in the context.
+<1> Bootstrap the GraniteDS Tide context. Note that we pass a +JavaFXApplication+ to indicate that we need JavaFX support and pass the actual JavaFX application object and stage.
+<2> Configure a +ServerSession+ object in the context, which represents a user session with a remote server.
 <3> Configure a client proxy for the service, the name +helloWorldService+ on the client should match the name on the server
 (see <<server.destination,here>> where the service name is defined in the server application).
 <4> Start the server session, initializing all required resources.

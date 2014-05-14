@@ -36,10 +36,12 @@ public class HelloWorldClient extends Application {
     }
 
     // tag::client-setup[]
-    private static Context context = new SimpleContextManager(new JavaFXApplication()).getContext(); // <1>
+    private static Context context;
 
     @Override
     public void start(Stage stage) throws Exception {
+    	context = new SimpleContextManager(new JavaFXApplication(this, stage)).getContext(); // <1>
+    	
         final ServerSession serverSession = context.set(
                 new ServerSession("/helloworld", "localhost", 8080)); // <2>
         final Component helloWorldService = context.set("helloWorldService",
@@ -75,33 +77,34 @@ public class HelloWorldClient extends Application {
         stage.setScene(scene);
         stage.show();
         // end::client-ui[]
-
+        
         // tag::client-call[]
         sendButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                helloWorldService.call("hello", nameField.getText(), // <1>
+			@Override
+			public void handle(ActionEvent event) {
+	            helloWorldService.call("hello", nameField.getText(), // <1>
                     new TideResponder<String>() { // <2>
-                        @Override
-                        public void result(TideResultEvent<String> event) { // <3>
-                            resultLabel.setText(event.getResult());
-                        }
-
-                        @Override
-                        public void fault(TideFaultEvent event) { // <4>
+						@Override
+						public void result(TideResultEvent<String> tre) { // <3>
+	                		resultLabel.setText(tre.getResult());
+	                		nameField.setText(null);
+						}
+						@Override
+						public void fault(TideFaultEvent tfe) { // <4>
                             System.err.println("-----------------------------");
-                            System.err.println("Fault: " + event.getFault().getCode() + ": "
-                                    + event.getFault().getFaultDescription());
+                            System.err.println("Fault: " + tfe.getFault().getCode() + ": "
+                                    + tfe.getFault().getFaultDescription());
                             System.err.println("-----------------------------");
-                        }
-                    }
+						}
+	            	}
                 );
-            }
+			}
         });
+        
         nameField.setOnAction(sendButton.getOnAction());
         // end::client-call[]
     }
-
+    
     // tag::client-close[]
     @Override
     public void stop() throws Exception {

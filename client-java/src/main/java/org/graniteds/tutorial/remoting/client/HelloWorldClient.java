@@ -13,15 +13,20 @@ import org.granite.client.tide.server.TideResultEvent;
 public class HelloWorldClient {
 
     public static void main(String[] args) throws Exception {
+    	if (args == null || args.length == 0) {
+    		System.out.println("Please add an argument to call the service");
+    		return;
+    	}
+    	
         // tag::client-app[]
         Context context = new SimpleContextManager().getContext(); // <1>
         ServerSession serverSession = context.set(
                 new ServerSession("/helloworld", "localhost", 8080)); // <2>
         Component helloWorldService = context.set("helloWorldService",
                 new ComponentImpl(serverSession)); // <3>
-
+        
         serverSession.start();      //  <4>
-
+        
         helloWorldService.call("hello", args[0], new TideResponder<String>() { // <5>
             @Override
             public void result(TideResultEvent<String> event) { // <6>

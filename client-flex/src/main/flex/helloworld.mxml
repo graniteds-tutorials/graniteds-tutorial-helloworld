@@ -11,7 +11,7 @@
             import org.granite.tide.spring.Spring;
             import org.granite.tide.service.SimpleServerApp;
             import org.granite.tide.Component;
-
+			
 			// tag::client-setup[]
             private function init():void {
 				Spring.getInstance().initApplication(); // <1>
