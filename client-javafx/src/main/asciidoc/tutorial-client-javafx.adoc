@@ -56,6 +56,6 @@ include::{srcdir}/main/java/org/graniteds/tutorial/remoting/client/HelloWorldCli
 Finally, here are the maven dependencies for the JavaFX module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
 ----

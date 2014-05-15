@@ -34,5 +34,5 @@ This EJB will be looked up by GraniteDS in the JNDI context by expanding the com
 Finally, here are the maven dependencies for the EJB module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-ejb/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-ejb/pom.xml[tags=maven-deps]
 ----

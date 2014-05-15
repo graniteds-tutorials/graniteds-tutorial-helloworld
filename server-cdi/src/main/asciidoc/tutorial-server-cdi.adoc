@@ -28,5 +28,5 @@ include::{srcdir}/main/java/org/graniteds/tutorial/remoting/server/HelloWorldSer
 Finally, here are the maven dependencies for the CDI module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-cdi/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-cdi/pom.xml[tags=maven-deps]
 ----

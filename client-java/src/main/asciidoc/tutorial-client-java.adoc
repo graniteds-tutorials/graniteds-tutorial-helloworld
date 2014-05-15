@@ -39,6 +39,6 @@ The configuration steps (1 to 4) should be done only once at the startup of the 
 Finally, here are the maven dependencies for the Java module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-java/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-java/pom.xml[tags=maven-deps]
 ----
