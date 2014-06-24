@@ -9,10 +9,13 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/core.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex/3.0.0.SNAPSHOT/granite-client-flex-3.0.0.SNAPSHOT.swc" useDefaultLinkType="false"/>
-      <libraryPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex45-advanced/3.0.0.SNAPSHOT/granite-client-flex45-advanced-3.0.0.SNAPSHOT.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex/3.1.0.RC1/granite-client-flex-3.1.0.RC1.swc" sourcepath="${M2_REPO}/org/graniteds/granite-client-flex/3.1.0.RC1/granite-client-flex-3.1.0.RC1-sources.jar" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex45-advanced/3.1.0.RC1/granite-client-flex45-advanced-3.1.0.RC1.swc" sourcepath="${M2_REPO}/org/graniteds/granite-client-flex45-advanced/3.1.0.RC1/granite-client-flex45-advanced-3.1.0.RC1-sources.jar" useDefaultLinkType="false"/>
     </libraryPath>
-    <sourceAttachmentPath/>
+    <sourceAttachmentPath>
+      <sourceAttachmentPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex/3.1.0.RC1/granite-client-flex-3.1.0.RC1.swc" sourcepath="${M2_REPO}/org/graniteds/granite-client-flex/3.1.0.RC1/granite-client-flex-3.1.0.RC1-sources.jar" useDefaultLinkType="false"/>
+      <sourceAttachmentPathEntry kind="3" linkType="1" path="${M2_REPO}/org/graniteds/granite-client-flex45-advanced/3.1.0.RC1/granite-client-flex45-advanced-3.1.0.RC1.swc" sourcepath="${M2_REPO}/org/graniteds/granite-client-flex45-advanced/3.1.0.RC1/granite-client-flex45-advanced-3.1.0.RC1-sources.jar" useDefaultLinkType="false"/>
+    </sourceAttachmentPath>
   </compiler>
   <applications>
     <application path="helloworld.mxml"/>

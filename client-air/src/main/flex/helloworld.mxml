@@ -28,6 +28,7 @@
                 helloWorldService.hello(nameInput.text, // <2>
                     function(event:TideResultEvent):void { // <3>
                         resultLabel.text = event.result as String;
+                        nameInput.text = "";
                     }
                 );
             }

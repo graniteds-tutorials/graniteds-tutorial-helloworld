@@ -15,7 +15,6 @@
 			// tag::client-setup[]
             private function init():void {
 				Spring.getInstance().initApplication(); // <1>
-				Spring.getInstance().mainServerSession.serverApp = new SimpleServerApp();
             }
 			// end::client-setup[]
 			
@@ -27,6 +26,7 @@
                 helloWorldService.hello(nameInput.text, // <2>
                     function(event:TideResultEvent):void { // <3>
                         resultLabel.text = event.result as String;
+                        nameInput.text = "";
                     }
                 );
             }

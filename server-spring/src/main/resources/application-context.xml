@@ -10,7 +10,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd
             http://www.graniteds.org/config
-            http://www.graniteds.org/public/dtd/3.0.0/granite-config-3.0.xsd">
+            http://www.graniteds.org/public/dtd/3.1.0/granite-config-3.1.xsd">
     <!-- end::namespace[] -->
 
     <!-- Spring annotation scan -->
