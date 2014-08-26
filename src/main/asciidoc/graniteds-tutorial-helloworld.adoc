@@ -100,7 +100,7 @@ java -jar target/jfx/app/helloworld.jar
 endif::[]
 
 ifeval::["{client}" == "flex"]
-To run the Flex client, browse http://localhost:8080/helloworld/helloworld.swf[^]
+To run the Flex client, browse http://localhost:8080/helloworld/[^]
 endif::[]
 
 ifeval::["{client}" == "air"]
