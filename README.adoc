@@ -22,7 +22,7 @@ The first step is to clone this git repository from the command line:
 git clone http://github.com/graniteds-tutorials/graniteds-tutorial-helloworld.git
 ----
 
-Next +cd+ in the tutorial folder and build the project and tutorial document:
+Next +cd+ in the tutorial folder and build the project and tutorial document (see next section for other options):
 
 ----
 cd graniteds-tutorial-helloworld
