@@ -34,7 +34,7 @@ Finally, each time you launch one of the above build, a dedicated documentation 
 +target/docs/graniteds-tutorial-helloworld.html+. Refer to this document to know how to run the sample application
 and how its source code is designed.
 
-== Available Server / Client Configuration
+== Available Server / Client Configurations
 
 The available options for the server are:
 
